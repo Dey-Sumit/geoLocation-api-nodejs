@@ -1,0 +1,16 @@
+{
+  "name": "geolocation-api",
+  "version": "1.0.0",
+  "description": "\"Getting started with node.js ;express,navigator api,ftch api etc; reference:coding train\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sumit Dey",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^6.7.2",
+    "express": "^4.17.1",
+    "nedb": "^1.8.0"
+  }
+}
