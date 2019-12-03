@@ -22,7 +22,7 @@ app.use(express.json());
 //setting up ROUTE
 //this 'home' route will catch any post request to it
 app.post('/home', (request, response) => {
-  console.log("request coming");
+  console.log("post request coming");
   //console.log(request.body);
   const data = request.body;
   //attach timeStamp to the data
@@ -33,7 +33,7 @@ app.post('/home', (request, response) => {
   response.json({
     status: 'success',
     long: data.long,
-    lat: data.lat
+    lat: data.lat,
     timeStamp: timeStamp
   })
 

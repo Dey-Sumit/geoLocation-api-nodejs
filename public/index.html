@@ -1,15 +1,40 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Mah Website</title>
-  </head>
 
-  <body>
-    <h1>Welcome to node js</h1>
-    <h3>longitude:<span id='long'>dynamic content</span>&deg</h3>
-    <h3>latitude:<span id='lat'></span>&deg</h3>
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Black+Ops+One&display=swap" rel="stylesheet">
 
-    <script src="./js/geoLocation.js" charset="utf-8"></script>
-  </body>
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Cutive+Mono|Fredericka+the+Great&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="main">
+    <h1 class='header'>Welcome to node js</h1>
+    <div class='body'>
+      <h3>longitude:<span id='long'>dynamic content</span>&deg</h3>
+      <h3>latitude:<span id='lat'></span>&deg</h3>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+  <script src="./js/geoLocation.js" charset="utf-8"></script>
+  <script>
+    var textWrapper = document.querySelector('.header');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+    anime.timeline({
+        loop: false
+      })
+      .add({
+        targets: '.header .letter',
+        opacity: [0, 1],
+        easing: "easeInOutQuad",
+        duration: 2250,
+        delay: (el, i) => 150 * (i + 1)
+      });
+  </script>
+
+</body>
+
 </html>
