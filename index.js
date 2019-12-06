@@ -30,11 +30,24 @@ app.post('/home', (request, response) => {
   data.timeStamp = timeStamp;
   dataBase.insert(data);
 
-  response.json({
+  /*response.json({
     status: 'success',
     long: data.long,
     lat: data.lat,
     timeStamp: timeStamp
-  })
+  })*/
+  response.json(data);
 
 })
+
+//this 'home' route will catch any get request to it
+app.get('/home', (request, response) => {
+  console.log("get request on home");
+  //send response
+  dataBase.find({}, (error, data) => {
+    if (error)
+      console.log('error');
+    response.json(data);
+  });
+
+});

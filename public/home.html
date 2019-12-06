@@ -1,10 +1,38 @@
-!<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>home</title>
-  </head>
-  <body>
-    
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>home</title>
+</head>
+
+<body>
+  <h2>home.html</h2>
+  <script>
+    getData();
+    //get(by default of fetch api) request to  /home
+    async function getData() {
+      const response = await fetch('/home');
+      const data = await response.json();
+      console.log(data);
+
+      //visualize the data dynamically
+      for (item of data) {
+
+        const root = document.createElement('div');
+        const geo = document.createElement('div');
+        const date = document.createElement('div');
+
+        geo.textContent = item.lat +','+ item.long;
+        date.textContent = 'time : '+ item.timeStamp;
+
+        root.append(geo, date);
+        document.body.append(root);
+
+        // TO-DO:add css
+      }
+    }
+  </script>
+</body>
+
 </html>
