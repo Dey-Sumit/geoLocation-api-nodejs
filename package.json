@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "eslint": "^6.7.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "nedb": "^1.8.0",
     "particles.js": "^2.0.0"
   }
